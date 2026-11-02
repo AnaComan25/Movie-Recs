@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { SupabaseService } from '../../supabase.service';
 import { Movie } from '../../movie.config';
 import { Router } from '@angular/router';
-
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-home',
   imports: [FormsModule],
@@ -26,7 +26,7 @@ export class Home {
 
   async fetchMovieDetails(title: string, year: string) : Promise<Movie> {
     try {
-      const response = await fetch('http://www.omdbapi.com/?apikey=e1df80d0&t=' + encodeURIComponent(title) + '&y=' + encodeURIComponent(year));
+      const response = await fetch('http://www.omdbapi.com/?apikey=' + environment.movieDBApiKey + '&t=' + encodeURIComponent(title) + '&y=' + encodeURIComponent(year));
       const data = await response.json();
       let movie = {
         title: data.Title,
