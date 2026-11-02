@@ -34,11 +34,11 @@ jobs:
 
       # Compiles your project into raw, optimized web files
       - name: Build Production App
-        run: npx ng build --configuration production --base-href=/movie-recs/
+        run: npx ng build --configuration production --base-href=/Movie-Recs/
 
       # Cleans out your 'deploy' branch completely and drops in the working app
       - name: Deploy to GitHub Pages Branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/movie-recs/browser
+          folder: dist/Movie-Recs/browser
           branch: deploy
