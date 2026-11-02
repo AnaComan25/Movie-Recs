@@ -26,7 +26,7 @@ export class Home {
 
   async fetchMovieDetails(title: string, year: string) : Promise<Movie> {
     try {
-      const response = await fetch('http://www.omdbapi.com/?apikey=' + environment.movieDBApiKey + '&t=' + encodeURIComponent(title) + '&y=' + encodeURIComponent(year));
+      const response = await fetch('https://www.omdbapi.com/?apikey=' + environment.movieDBApiKey + '&t=' + encodeURIComponent(title) + '&y=' + encodeURIComponent(year));
       const data = await response.json();
       let movie = {
         title: data.Title,
