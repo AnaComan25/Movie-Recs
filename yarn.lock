@@ -289,6 +289,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/service-worker@^20.0.0":
+  version "20.3.34"
+  resolved "https://registry.npmjs.org/@angular/service-worker/-/service-worker-20.3.34.tgz"
+  integrity sha512-O7mFfdkNOAE5lW3z4RK5wKKXCf9CdOLrn51gckLjpcCpJHjRbK96jynH/PD60nysU6VA5s5sEQwj7++AnAKIKA==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/ssr@^20.0.1", "@angular/ssr@^20.3.42":
   version "20.3.42"
   resolved "https://registry.npmjs.org/@angular/ssr/-/ssr-20.3.42.tgz"

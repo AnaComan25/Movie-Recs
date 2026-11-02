@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 14px;
+    padding-top: 60px;
     background-color:rgb(242, 109, 109);
     z-index: 10;
 }
@@ -30,7 +31,7 @@
 }
 
 .scrollable-list-container {
-    height: 91%;
+    height: calc(100vh - 60px - 40px - 40px);
     max-height: 100%;
     overflow-y: auto;
     width: 100%;
