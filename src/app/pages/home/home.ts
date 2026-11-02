@@ -4,6 +4,7 @@ import { SupabaseService } from '../../supabase.service';
 import { Movie } from '../../movie.config';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-home',
   imports: [FormsModule],
@@ -46,9 +47,9 @@ export class Home {
   async saveMovie(movie: Movie) {
     const { data, error } = await this.supabaseService.addMovie(movie);
     if (error) {
-      alert('Either movie already in list or it was spelled wrong');
+      Swal.fire('Either movie already in list or it was spelled wrong')
     } else {
-      alert('Movie added successfully');
+      Swal.fire('Movie added successfully');
     }
   }
 
