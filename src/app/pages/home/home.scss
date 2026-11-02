@@ -1,0 +1,103 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: top;
+    align-items: center;
+    gap: 30px;
+    background: radial-gradient(circle, rgb(139, 218, 252), rgb(244, 64, 64));
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    width: 335px;
+    margin-top: 55px;
+    border-radius: 30px;
+    font-size: 16px;
+    flex-direction: column;
+    background-color:rgb(170, 219, 248);
+    color:rgb(1, 71, 106);
+}
+
+.subtitle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 300px;
+    font-size: 22px;
+    flex-direction: column;
+    color: rgb(185, 228, 250);
+}
+
+.element-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin-top: 20px; 
+    border: 2px solid rgb(242, 109, 109);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.element-container.view {
+    border-color:rgb(170, 219, 248);
+}
+
+.element-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    background-color:  rgb(242, 109, 109);
+    color: rgb(255, 239, 239); 
+    font-size: 16px;
+}
+
+.element-title-container.view {
+    background-color: rgb(170, 219, 248);
+    color: rgb(1, 71, 106);
+}
+
+.actual-element-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 15px;
+}
+
+.movie-input {
+    width: 95%;
+    height:28px;
+    padding: 5px;
+    border: 1px solid  rgb(242, 109, 109);
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.movie-button {
+    padding: 5px 10px;
+    border: 1px solid rgb(242, 109, 109);
+    border-radius: 5px;
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+    background-color:  rgb(242, 109, 109);
+    color:  rgb(255, 239, 239);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.movie-button.view {
+    border: 1px solid  rgb(170, 219, 248);
+    background-color:  rgb(170, 219, 248);
+    color:  rgb(1, 71, 106);
+}

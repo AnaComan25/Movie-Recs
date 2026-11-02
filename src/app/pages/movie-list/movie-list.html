@@ -1,0 +1,54 @@
+<!-- <div>
+    @for(movie of movieList; track movie){
+        <p>{{ movie.title }} ({{ movie.year }}) - Directed by {{ movie.director }}</p>
+    }
+</div>
+
+ -->
+<div class="movie-list-container">
+    <div class="title-bar-container">
+        <div class="title">{{watched? 'Movies Watched' : 'Movies to watch'}}</div>
+        <div class="return-home" (click)="returnHome()">&larr; Return home</div>
+    </div>
+    @if(!watched){
+        <div class="next-watch-container">
+            Next up: {{nextToWatch? nextToWatch.title : 'None'}}
+        </div>
+    } @else {
+        <div class="next-watch-container">
+        </div>
+    }
+    <div class="scrollable-list-container">
+        @for(movie of movieList; track movie){
+            <div class="list-element">
+                <img [src]="movie.poster" class="poster">
+                <div class="movie-details">
+                    <div class="title-year-container">
+                        <div class="movie-title">{{movie.title}}</div>
+                        <div class="movie-year">{{movie.year}}</div>
+                    </div>
+
+                    <div class="dir-genre-container">
+                        <div class="movie-director"><span class="label">Director:</span> {{movie.director}}</div>
+                        <div class="movie-genre"><span class="label">Genre:</span> {{movie.genre}}</div>
+                    </div>
+
+                    <div class="options-row">
+                        <div class="unmark-mark">
+                            <input type="checkbox" (change)="updateWatchedStatus(movie.title, movie.year, movie.watched, $event.target.checked)" >
+                            <label for="watched">{{movie.watched? 'Move to Not Watched' : 'Move to Watched'}}</label>
+                        </div>
+                        @if(!movie.watched){
+                            <div class="next-up">
+                                <input type="checkbox" (change)="setNextUp(movie.title, movie.year, $event.target.checked)">
+                                <label for="next-up">Next up</label>
+                            </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        }
+        
+    </div>
+</div>

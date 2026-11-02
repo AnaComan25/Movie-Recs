@@ -1,0 +1,117 @@
+.movie-list-container {
+    height: 100%;
+    background-color:rgb(249, 242, 236);
+}
+.title-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    background-color:rgb(242, 109, 109);
+    z-index: 10;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.return-home {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.next-watch-container {
+    font-size: 16px;
+    overflow: scroll;
+    max-width: 350px;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.scrollable-list-container {
+    height: 91%;
+    max-height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.list-element {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 315px;
+    height: fit-content;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color:  rgb(245, 134, 128);
+}
+
+.poster {
+    width: 22%;
+    height: auto;
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.title-year-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.movie-title {
+    font-weight: bold;
+    overflow: scroll;
+    max-width: 190px;
+    white-space: nowrap;
+}
+
+.movie-year{
+    font-weight: normal;
+}
+
+.dir-genre-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-weight:600;
+}
+
+.movie-director {
+    overflow: scroll;
+    max-width: 225px;
+    white-space: nowrap;
+}
+
+.movie-genre {
+    overflow: scroll;
+    max-width: 238px;
+    white-space: nowrap;
+}
+
+.options-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.unmark-mark, .next-up {
+    display: flex;
+    gap: 5px;
+}
