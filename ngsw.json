@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1793650312223,
+  "timestamp": 1793687863329,
   "index": "/Movie-Recs/index.html",
   "assetGroups": [
     {
@@ -13,10 +13,10 @@
       "urls": [
         "/Movie-Recs/favicon.ico",
         "/Movie-Recs/index.html",
-        "/Movie-Recs/main-4S7K2NFA.js",
+        "/Movie-Recs/main-ZK6AJNKP.js",
         "/Movie-Recs/manifest.webmanifest",
         "/Movie-Recs/polyfills-5CFQRCPP.js",
-        "/Movie-Recs/styles-XYOLSXSP.css"
+        "/Movie-Recs/styles-REPDZCTF.css"
       ],
       "patterns": []
     },
@@ -28,34 +28,28 @@
         "ignoreVary": true
       },
       "urls": [
-        "/Movie-Recs/icons/icon-128x128.png",
-        "/Movie-Recs/icons/icon-144x144.png",
-        "/Movie-Recs/icons/icon-152x152.png",
-        "/Movie-Recs/icons/icon-192x192.png",
-        "/Movie-Recs/icons/icon-384x384.png",
-        "/Movie-Recs/icons/icon-512x512.png",
-        "/Movie-Recs/icons/icon-72x72.png",
-        "/Movie-Recs/icons/icon-96x96.png"
+        "/Movie-Recs/icons/android-chrome-192x192.png",
+        "/Movie-Recs/icons/android-chrome-512x512.png",
+        "/Movie-Recs/icons/apple-touch-icon.png",
+        "/Movie-Recs/icons/favicon-16x16.png",
+        "/Movie-Recs/icons/favicon-32x32.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/Movie-Recs/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "/Movie-Recs/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
-    "/Movie-Recs/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
-    "/Movie-Recs/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
-    "/Movie-Recs/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
-    "/Movie-Recs/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
-    "/Movie-Recs/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
-    "/Movie-Recs/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
-    "/Movie-Recs/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/Movie-Recs/index.html": "fb3f21a66fd2634d5fed66e8feec4568e65561f5",
-    "/Movie-Recs/main-4S7K2NFA.js": "364649222bef8e6468897ca439368b7ca94b78b7",
+    "/Movie-Recs/favicon.ico": "ce9077516f70ba6dfad4ee35a9df231890a5597f",
+    "/Movie-Recs/icons/android-chrome-192x192.png": "563b9e4a153c72b79b5d6be9acd7f1fe477fbcb8",
+    "/Movie-Recs/icons/android-chrome-512x512.png": "1957bef113f53a15698d5e27bc93f7fcb9e62958",
+    "/Movie-Recs/icons/apple-touch-icon.png": "ca81fb7ba00a8af5688b16cc18cef01df40b2319",
+    "/Movie-Recs/icons/favicon-16x16.png": "526e9fc7e789d68dd2d764683d81bc3583536186",
+    "/Movie-Recs/icons/favicon-32x32.png": "3fcd8d08bf4dbc9abca59a97e019d22241db5c41",
+    "/Movie-Recs/index.html": "49c9712067b7e7d70eac5160e34653fa1c480982",
+    "/Movie-Recs/main-ZK6AJNKP.js": "dd48b1b36bf2938981c388b3811af5e643f304b4",
     "/Movie-Recs/manifest.webmanifest": "b22c3a3caa245df22b436e828afdf555f9938d27",
     "/Movie-Recs/polyfills-5CFQRCPP.js": "f2241e9a25858f895ce299d15f6f22e849e2fd72",
-    "/Movie-Recs/styles-XYOLSXSP.css": "e84cdcd49b75a19d76c9b746e3d4bea0c3d669f6"
+    "/Movie-Recs/styles-REPDZCTF.css": "9b20a853ac92080c5da1668e3148cad912e506c5"
   },
   "navigationUrls": [
     {
