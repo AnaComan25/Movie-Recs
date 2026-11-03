@@ -67,7 +67,7 @@ export class MovieList implements OnInit {
   }
 
   async updateWatchedStatus(movieTitle: any, movieYear: any, watched: boolean) {
-    if(watched == false){
+    if (this.nextToWatch && this.nextToWatch.title === movieTitle && this.nextToWatch.year === movieYear && watched == false) {
       await this.unsetNextUp();
     }
     console.log('Updating watched status for:', movieTitle, movieYear, 'Current watched:', watched);
