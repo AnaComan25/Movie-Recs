@@ -1,19 +1,28 @@
-<!-- <div>
-    @for(movie of movieList; track movie){
-        <p>{{ movie.title }} ({{ movie.year }}) - Directed by {{ movie.director }}</p>
-    }
-</div>
-
- -->
 <div class="movie-list-container">
     <div class="title-bar-container">
-        <div class="title">{{watched? 'Movies Watched' : 'Movies to watch'}}</div>
-        <div class="return-home" (click)="returnHome()">&larr; Return home</div>
+        <div class="title">{{watched? 'Watched' : 'Watchlist'}}</div>
+        <div class="return-home" (click)="returnHome()">&larr; Home</div>
     </div>
     @if(!watched){
-        <div class="next-watch-container">
-            Next up: {{nextToWatch? nextToWatch.title : 'None'}}
-        </div>
+        @if(nextToWatch){
+            <div class="list-element nextUp">
+                <div class="movie-details">
+                    <div class="title-year-container">
+                        <div class="next-label">Next up:</div>
+                        <div class="movie-title nextUp">{{nextToWatch.title}}</div>
+                        <div class="unmark-mark nextUp" (click)="updateWatchedStatus(nextToWatch.title, nextToWatch.year, nextToWatch.watched)">
+                            <div>{{nextToWatch.watched ? '+ Watchlist' : '+ Watched'}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        } @else {
+            <div class="list-element nextUp noNext">
+                <div class="next-watch-container">
+                    Next up:<span class="none-text">None</span>
+                </div>
+            </div>
+        }
     } @else {
         <div class="next-watch-container">
         </div>
@@ -21,7 +30,7 @@
     <div class="scrollable-list-container">
         @for(movie of movieList; track movie){
             <div class="list-element">
-                <img [src]="movie.poster" class="poster">
+                <img [src]="movie.poster" onerror="this.onerror=null; this.src='https\:\/\/randomimageurl.com/api/placeholder?w=69&h=102&bg=abdbf7&fg=01476a&format=png&text=No+Img%21';" class="poster"/> 
                 <div class="movie-details">
                     <div class="title-year-container">
                         <div class="movie-title">{{movie.title}}</div>
@@ -34,14 +43,12 @@
                     </div>
 
                     <div class="options-row">
-                        <div class="unmark-mark">
-                            <input type="checkbox" (change)="updateWatchedStatus(movie.title, movie.year, movie.watched, $event.target.checked)" >
-                            <label for="watched">{{movie.watched? 'Move to Not Watched' : 'Move to Watched'}}</label>
+                        <div class="unmark-mark" (click)="updateWatchedStatus(movie.title, movie.year, movie.watched)">
+                            <div>{{movie.watched? '+ Watchlist' : '+ Watched'}}</div>
                         </div>
                         @if(!movie.watched){
                             <div class="next-up">
-                                <input type="checkbox" (change)="setNextUp(movie.title, movie.year, $event.target.checked)">
-                                <label for="next-up">Next up</label>
+                                <div (click)="setNextUp(movie.title, movie.year, true)">Next watch &uarr;</div>
                             </div>
                         }
                         

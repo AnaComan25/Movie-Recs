@@ -1,14 +1,15 @@
 .movie-list-container {
     height: 100%;
-    background-color:rgb(249, 242, 236);
+    background-color:rgb(240, 50, 102, .93);
 }
+
 .title-bar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 14px;
     padding-top: 60px;
-    background-color:rgb(242, 109, 109);
+    background-color:rgb(94 181 239);
     z-index: 10;
 }
 
@@ -23,11 +24,18 @@
 }
 
 .next-watch-container {
-    font-size: 16px;
+    font-size: 20px;
     overflow: scroll;
     max-width: 350px;
     white-space: nowrap;
     padding: 10px;
+    color:#daefff;
+    font-weight: bold;
+}
+
+.none-text {
+    margin-left: 8px;
+    font-weight: normal;
 }
 
 .scrollable-list-container {
@@ -45,13 +53,41 @@
 .list-element {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    width: 315px;
+    gap: 14px;
+    width: 330px;
     height: fit-content;
     border-radius: 25px;
     padding: 20px;
+    padding-bottom: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    background-color:  rgb(245, 134, 128);
+    background-color:  rgb(94 181 239);
+    color:rgb(1 38 56);
+}
+
+.list-element.nextUp {
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    font-size: 18px;
+    background-color: transparent;
+    box-shadow: 0px 0px 6px 2px #00000026;
+    border-radius: 0px;
+    margin-bottom: 9px;
+}
+
+.list-element.nextUp.noNext {
+    padding: 0px;
+}
+
+.next-label {
+    font-weight: bold;
+    color: #daefff;
+}
+
+.movie-title.nextUp {
+    font-weight: normal;
+    font-size: 18px;
+    color: #daefff;
 }
 
 .poster {
@@ -110,9 +146,27 @@
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    margin-top: 3px;
 }
 
 .unmark-mark, .next-up {
     display: flex;
-    gap: 5px;
+    gap: 2px;
+    background-color: #b1d3f3;
+    border-radius: 13px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    color:rgb(1 38 56);
+}
+
+.unmark-mark.nextUp {
+    font-size: 14px;
+}
+
+.next-up {
+    background-color: #f0a4ce;
 }

@@ -12,7 +12,7 @@ import { SupabaseService } from '../../supabase.service';
 export class MovieList implements OnInit {
   movieList: Movie[] = [];
   watched: boolean = false;
-  nextToWatch: Movie | null = null;
+  nextToWatch: Movie = {} as Movie;
   
   constructor(private router: Router, private supabaseService: SupabaseService, private cdr: ChangeDetectorRef) {
   }
@@ -66,7 +66,7 @@ export class MovieList implements OnInit {
     await this.getNextUp();
   }
 
-  async updateWatchedStatus(movieTitle: any, movieYear: any, watched: boolean, newWatchedStatus: boolean) {
+  async updateWatchedStatus(movieTitle: any, movieYear: any, watched: boolean) {
     if(watched == false){
       await this.unsetNextUp();
     }

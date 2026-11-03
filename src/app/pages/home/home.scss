@@ -6,7 +6,21 @@
     justify-content: top;
     align-items: center;
     gap: 30px;
-    background: radial-gradient(circle, rgb(139, 218, 252), rgb(244, 64, 64));
+    background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
+}
+
+.sparkle-button-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.sparkle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .title-container {
@@ -17,10 +31,10 @@
     width: 335px;
     margin-top: 80px;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 15px;
     flex-direction: column;
-    background-color:rgb(170, 219, 248);
-    color:rgb(1, 71, 106);
+    background-color:rgb(122, 210, 248);
+    color:#01476a;
 }
 
 .subtitle-container {
@@ -31,7 +45,7 @@
     width: 350px;
     font-size: 22px;
     flex-direction: column;
-    color: rgb(185, 228, 250);
+    color: rgb(122, 210, 248);
 }
 
 .element-container {
@@ -40,12 +54,12 @@
     align-items: center;
     width: 300px;
     margin-top: 20px; 
-    border: 2px solid rgb(242, 109, 109);
+    border: 2px solid rgb(238, 87, 127);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .element-container.view {
-    border-color:rgb(170, 219, 248);
+    border-color:rgb(122, 210, 248);
 }
 
 .element-title-container {
@@ -54,13 +68,13 @@
     justify-content: center;
     height: 50px;
     width: 100%;
-    background-color:  rgb(242, 109, 109);
-    color: rgb(255, 239, 239); 
+    background-color:  rgb(238, 87, 127);
+    color: rgb(255, 239, 242);
     font-size: 16px;
 }
 
 .element-title-container.view {
-    background-color: rgb(170, 219, 248);
+    background-color: rgb(122, 210, 248);
     color: rgb(1, 71, 106);
 }
 
@@ -78,26 +92,27 @@
     width: 95%;
     height:28px;
     padding: 5px;
-    border: 1px solid  rgb(242, 109, 109);
+    border: 1px solid  rgb(238, 87, 127);
     border-radius: 5px;
     font-size: 18px;
 }
 
 .movie-button {
     padding: 5px 10px;
-    border: 1px solid rgb(242, 109, 109);
+    border: 1px solid rgb(238, 87, 127);
     border-radius: 5px;
     width: 100%;
     height: 35px;
     font-size: 20px;
-    background-color:  rgb(242, 109, 109);
-    color:  rgb(255, 239, 239);
+    background-color:  rgb(238, 87, 127);
+    color:  rgb(255, 239, 242);
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .movie-button.view {
-    border: 1px solid  rgb(170, 219, 248);
-    background-color:  rgb(170, 219, 248);
+    border: 1px solid  rgb(122, 210, 248);
+    background-color:  rgb(122, 210, 248);
     color:  rgb(1, 71, 106);
 }

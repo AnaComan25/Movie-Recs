@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SupabaseService } from '../../supabase.service';
 import { Movie } from '../../movie.config';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
+import { timer } from 'rxjs';
 @Component({
   selector: 'app-home',
   imports: [FormsModule],
@@ -17,10 +18,19 @@ export class Home {
   director = '';
   year = '';
   todos: any[] = [];
+  clicked = false;
+  movWatchClicked = false;
+  movListClicked = false;
 
-  constructor(private supabaseService: SupabaseService, private router: Router) {}
+  constructor(private supabaseService: SupabaseService, private router: Router, private cdr: ChangeDetectorRef) {}
 
   async addMovie() {
+    this.clicked = true;
+    this.cdr.detectChanges();
+    setTimeout(() => {
+      this.clicked = false;
+      this.cdr.detectChanges();
+    }, 250);
     let movie = this.fetchMovieDetails(this.movieTitle, this.year);
     await this.saveMovie(await movie.then(m => m));
   }
@@ -47,13 +57,24 @@ export class Home {
   async saveMovie(movie: Movie) {
     const { data, error } = await this.supabaseService.addMovie(movie);
     if (error) {
-      Swal.fire('Either movie already in list or it was spelled wrong')
+      Swal.fire('Oops! Movie already in list or spelled wrong');
     } else {
-      Swal.fire('Movie added successfully');
+      Swal.fire('Woohoo! Movie added successfully!');
     }
   }
 
   haveTheseMoviesBeenWatched(watched: boolean) {
-    this.router.navigate(['/movieList'], { state: {watched: watched } });
+    if(watched) {
+      this.movWatchClicked = true;
+    } else {
+      this.movListClicked = true;
+    }
+    this.cdr.detectChanges();
+    setTimeout(() => {
+      this.movWatchClicked = false;
+      this.movListClicked = false;
+      this.cdr.detectChanges();
+      this.router.navigate(['/movieList'], { state: { watched } });
+    }, 250);
   }
 }
