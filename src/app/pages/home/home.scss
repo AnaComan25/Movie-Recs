@@ -14,6 +14,9 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
   box-sizing: border-box;
   width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   justify-content: flex-start;
   align-items: center;
   gap: 30px;
