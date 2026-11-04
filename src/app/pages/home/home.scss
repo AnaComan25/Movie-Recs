@@ -1,12 +1,19 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 .landing-page {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: top;
-    align-items: center;
-    gap: 30px;
-    background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
 }
 
 .sparkle-button-wrap {
@@ -45,7 +52,7 @@
     width: 350px;
     font-size: 22px;
     flex-direction: column;
-    color: rgb(122, 210, 248);
+    color: rgb(139 215 249);
 }
 
 .element-container {

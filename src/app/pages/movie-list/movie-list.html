@@ -1,61 +1,69 @@
-<div class="movie-list-container">
-    <div class="title-bar-container">
-        <div class="title">{{watched? 'Watched' : 'Watchlist'}}</div>
-        <div class="return-home" (click)="returnHome()">&larr; Home</div>
+@if(loading){
+    <div class="loader-container">
+        <div class="loader"></div>
     </div>
-    @if(!watched){
-        @if(nextToWatch){
-            <div class="list-element nextUp">
-                <div class="movie-details">
-                    <div class="title-year-container">
-                        <div class="next-label">Next up:</div>
-                        <div class="movie-title nextUp">{{nextToWatch.title}}</div>
-                        <div class="unmark-mark nextUp" (click)="updateWatchedStatus(nextToWatch.title, nextToWatch.year, nextToWatch.watched)">
-                            <div>{{nextToWatch.watched ? '+ Watchlist' : '+ Watched'}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        } @else {
-            <div class="list-element nextUp noNext">
-                <div class="next-watch-container">
-                    Next up:<span class="none-text">None</span>
-                </div>
-            </div>
-        }
-    } @else {
-        <div class="next-watch-container">
+}
+@else {
+    <div class="movie-list-container">
+        <div class="title-bar-container">
+            <div class="title">{{watched? 'Watched' : 'Watchlist'}}</div>
+            <div class="return-home" (click)="returnHome()">&larr; Home</div>
         </div>
-    }
-    <div class="scrollable-list-container">
-        @for(movie of movieList; track movie){
-            <div class="list-element">
-                <img [src]="movie.poster" onerror="this.onerror=null; this.src='https\:\/\/randomimageurl.com/api/placeholder?w=69&h=102&bg=abdbf7&fg=01476a&format=png&text=No+Img%21';" class="poster"/> 
-                <div class="movie-details">
-                    <div class="title-year-container">
-                        <div class="movie-title">{{movie.title}}</div>
-                        <div class="movie-year">{{movie.year}}</div>
-                    </div>
-
-                    <div class="dir-genre-container">
-                        <div class="movie-director"><span class="label">Director:</span> {{movie.director}}</div>
-                        <div class="movie-genre"><span class="label">Genre:</span> {{movie.genre}}</div>
-                    </div>
-
-                    <div class="options-row">
-                        <div class="unmark-mark" (click)="updateWatchedStatus(movie.title, movie.year, movie.watched)">
-                            <div>{{movie.watched? '+ Watchlist' : '+ Watched'}}</div>
-                        </div>
-                        @if(!movie.watched){
-                            <div class="next-up">
-                                <div (click)="setNextUp(movie.title, movie.year, true)">Next watch &uarr;</div>
+        @if(!watched){
+            @if(nextToWatch){
+                <div class="list-element nextUp">
+                    <div class="movie-details">
+                        <div class="title-year-container">
+                            <div class="next-label">Next up:</div>
+                            <div class="movie-title nextUp">{{nextToWatch.title}}</div>
+                            <div class="unmark-mark nextUp" (click)="updateWatchedStatus(nextToWatch.title, nextToWatch.year, nextToWatch.watched)">
+                                <div>{{nextToWatch.watched ? '+ Watchlist' : '+ Watched'}}</div>
                             </div>
-                        }
-                        
+                        </div>
                     </div>
                 </div>
+            } @else {
+                <div class="list-element nextUp noNext">
+                    <div class="next-watch-container">
+                        Next up:<span class="none-text">None</span>
+                    </div>
+                </div>
+            }
+        } @else {
+            <div class="next-watch-container">
             </div>
         }
-        
+        <div class="scrollable-list-container">
+            @for(movie of movieList; track movie){
+                <div class="list-element">
+                    <img [src]="movie.poster" onerror="this.onerror=null; this.src='https\:\/\/randomimageurl.com/api/placeholder?w=69&h=102&bg=abdbf7&fg=01476a&format=png&text=No+Img%21';" class="poster"/> 
+                    <div class="movie-details">
+                        <div class="title-year-container">
+                            <div class="movie-title">{{movie.title}}</div>
+                            <div class="movie-year">{{movie.year}}</div>
+                        </div>
+
+                        <div class="dir-genre-container">
+                            <div class="movie-director"><span class="label">Director:</span> {{movie.director}}</div>
+                            <div class="movie-genre"><span class="label">Genre:</span> {{movie.genre}}</div>
+                        </div>
+
+                        <div class="options-row">
+                            <div class="unmark-mark" (click)="updateWatchedStatus(movie.title, movie.year, movie.watched)">
+                                <div>{{movie.watched? '+ Watchlist' : '+ Watched'}}</div>
+                            </div>
+                            @if(!movie.watched){
+                                <div class="next-up">
+                                    <div (click)="setNextUp(movie.title, movie.year, true)">Next watch &uarr;</div>
+                                </div>
+                            }
+                            
+                        </div>
+                    </div>
+                </div>
+            }
+            
+        </div>
     </div>
-</div>
+
+}

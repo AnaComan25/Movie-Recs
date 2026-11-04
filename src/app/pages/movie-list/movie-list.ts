@@ -13,11 +13,13 @@ export class MovieList implements OnInit {
   movieList: Movie[] = [];
   watched: boolean = false;
   nextToWatch: Movie = {} as Movie;
+  loading = false;
   
   constructor(private router: Router, private supabaseService: SupabaseService, private cdr: ChangeDetectorRef) {
   }
 
   async ngOnInit(){
+    this.loading = true;
     const state = history.state as {watched: boolean};
     this.watched = state.watched ?? false;
     console.log('Watched:', this.watched);
@@ -31,6 +33,7 @@ export class MovieList implements OnInit {
       console.error('Error fetching movies:', error);
     } else {
       console.log('Fetched movies:', data);
+      this.loading = false;
       this.movieList = data ?? [];
       this.movieList = this.movieList.filter(movie => movie.watched === this.watched);
     }
