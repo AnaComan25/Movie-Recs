@@ -26,7 +26,7 @@
 
 
 /* Solid pink behind gradient so iOS gaps/overscroll match the app, not white */
-$app-shell-pink: #f03266;
+$app-shell-pink: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
 $app-shell-gradient: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
 
 html {

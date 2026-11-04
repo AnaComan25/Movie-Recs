@@ -3,7 +3,7 @@
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  background-color: #f03266;
+  background-color: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
   background-image: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
 }
 
@@ -21,7 +21,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 30px;
-  background-color: #f03266;
+  background-color: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
   background-image: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
 }
 
