@@ -2,8 +2,8 @@
   display: block;
   min-height: 100vh;
   min-height: 100dvh;
+  background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
 }
-
 .landing-page {
   display: flex;
   flex-direction: column;
@@ -36,12 +36,12 @@
     justify-content: center;
     height: 65px;
     width: 335px;
-    margin-top: 80px;
+    margin-top: calc(80px + env(safe-area-inset-top, 0px));
     border-radius: 30px;
     font-size: 15px;
     flex-direction: column;
-    background-color:rgb(122, 210, 248);
-    color:#01476a;
+    background-color: rgb(122, 210, 248);
+    color: #01476a;
 }
 
 .subtitle-container {

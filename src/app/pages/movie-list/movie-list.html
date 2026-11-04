@@ -30,8 +30,7 @@
                 </div>
             }
         } @else {
-            <div class="next-watch-container">
-            </div>
+            <div class="next-watch-container empty"></div>
         }
         <div class="scrollable-list-container">
             @for(movie of movieList; track movie){
@@ -57,7 +56,6 @@
                                     <div (click)="setNextUp(movie.title, movie.year, true)">Next watch &uarr;</div>
                                 </div>
                             }
-                            
                         </div>
                     </div>
                 </div>
