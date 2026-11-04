@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1793778721139,
+  "timestamp": 1793783086463,
   "index": "/Movie-Recs/index.html",
   "assetGroups": [
     {
@@ -13,10 +13,10 @@
       "urls": [
         "/Movie-Recs/favicon.ico",
         "/Movie-Recs/index.html",
-        "/Movie-Recs/main-EAD7PAE6.js",
+        "/Movie-Recs/main-4HDGBTKP.js",
         "/Movie-Recs/manifest.webmanifest",
         "/Movie-Recs/polyfills-5CFQRCPP.js",
-        "/Movie-Recs/styles-QTALCY5Q.css"
+        "/Movie-Recs/styles-4QPY34KJ.css"
       ],
       "patterns": []
     },
@@ -28,6 +28,9 @@
         "ignoreVary": true
       },
       "urls": [
+        "/Movie-Recs/gifs/arrow-up-sm-svgrepo-com.svg",
+        "/Movie-Recs/gifs/cluster-classic-aqua.gif",
+        "/Movie-Recs/gifs/cluster-classic-pink.gif",
         "/Movie-Recs/icons/android-chrome-192x192.png",
         "/Movie-Recs/icons/android-chrome-512x512.png",
         "/Movie-Recs/icons/apple-touch-icon.png",
@@ -40,16 +43,19 @@
   "dataGroups": [],
   "hashTable": {
     "/Movie-Recs/favicon.ico": "b89eba2b76786b939e41e381d7f8a0f517e40628",
+    "/Movie-Recs/gifs/arrow-up-sm-svgrepo-com.svg": "4aa6727139e16a73a2f18454626431dc4e3498c2",
+    "/Movie-Recs/gifs/cluster-classic-aqua.gif": "60373cf64695b033f9ceaf6329cde79113453428",
+    "/Movie-Recs/gifs/cluster-classic-pink.gif": "9ea75051d26504a6a3c115b12a4ec0383e293b3b",
     "/Movie-Recs/icons/android-chrome-192x192.png": "c7af1041195ae6fd88efe750ebec7a762c79ae14",
     "/Movie-Recs/icons/android-chrome-512x512.png": "6686aef9cd45376417f9cc6a06bcbcd2342188e4",
     "/Movie-Recs/icons/apple-touch-icon.png": "d049d6ca38f32266430b6173a57dd4a4dfa384b2",
     "/Movie-Recs/icons/favicon-16x16.png": "8d370473793f364b6515f4cb38695e34d9db5747",
     "/Movie-Recs/icons/favicon-32x32.png": "1b08fc86139a816ce256051ee758d9146f228bba",
-    "/Movie-Recs/index.html": "3bba2a79414a2885be96fcde028b765befcd45c3",
-    "/Movie-Recs/main-EAD7PAE6.js": "26132f1dd63dd6e9715cbea887bf83aa8d7b372e",
+    "/Movie-Recs/index.html": "5dc40d6204e6203bbb372cd63d95da4951e93f31",
+    "/Movie-Recs/main-4HDGBTKP.js": "ef73f7a19c2d0a936b01c5eba861e3e40e5079ed",
     "/Movie-Recs/manifest.webmanifest": "b22c3a3caa245df22b436e828afdf555f9938d27",
     "/Movie-Recs/polyfills-5CFQRCPP.js": "f2241e9a25858f895ce299d15f6f22e849e2fd72",
-    "/Movie-Recs/styles-QTALCY5Q.css": "cd947dde33cec6564f843c0f0bc010d243fdc040"
+    "/Movie-Recs/styles-4QPY34KJ.css": "71575390715572aabfb73e9d1ac682c66f06b382"
   },
   "navigationUrls": [
     {
