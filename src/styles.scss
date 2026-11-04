@@ -25,6 +25,10 @@
 }
 
 
+/* Solid pink behind gradient so iOS gaps/overscroll match the app, not white */
+$app-shell-pink: #f03266;
+$app-shell-gradient: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
+
 html {
   margin: 0;
   height: 100%;
@@ -33,7 +37,8 @@ html {
   overscroll-behavior: none;
   touch-action: manipulation;
   -webkit-text-size-adjust: 100%;
-  background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
+  background-color: $app-shell-pink;
+  background-image: $app-shell-gradient;
 }
 
 body {
@@ -46,7 +51,8 @@ body {
   overscroll-behavior: none;
   touch-action: manipulation;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
+  background-color: $app-shell-pink;
+  background-image: $app-shell-gradient;
 }
 
 app-root {
@@ -56,7 +62,8 @@ app-root {
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
+  background-color: $app-shell-pink;
+  background-image: $app-shell-gradient;
 }
 
 app-root > app-home,
