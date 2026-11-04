@@ -24,6 +24,7 @@
     --swal2-toast-box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 1px 2px hsl(0deg 0% 0% / 0.075), 1px 2px 4px hsl(0deg 0% 0% / 0.075), 1px 3px 8px hsl(0deg 0% 0% / 0.075), 2px 4px 16px hsl(0deg 0% 0% / 0.075);
 }
 
+
 html,
 body {
   margin: 0;
@@ -32,6 +33,7 @@ body {
   overflow: hidden;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
+  
 }
 app-root {
   display: block;
@@ -40,11 +42,14 @@ app-root {
   overflow: hidden;
   background: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
 }
+
 html.swal2-height-auto {
-  height: var(--app-height, 100dvh) !important;
-  min-height: var(--app-height, 100dvh);
+  height: 100% !important;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
+
 html.swal2-height-auto app-root {
-  height: var(--app-height, 100dvh);
-  min-height: var(--app-height, 100dvh);
+  min-height: 100vh;
+  min-height: 100dvh;
 }
