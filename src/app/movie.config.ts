@@ -3,7 +3,7 @@ export type Movie = {
     director: string;
     year: string;
     genre?: string;
-    poster?: string;
+    poster: string;
     watched: boolean;
     nextUp: boolean;
 }

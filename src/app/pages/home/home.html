@@ -15,7 +15,7 @@
       <div class="sparkle-button-wrap">
         <button class="movie-button" (click)="addMovie()">Add to list</button>
         @if (clicked) {
-          <img class="sparkle" src='gifs/cluster-classic-pink.gif' width="60" height="60" alt="Pink sparkle">
+          <img class="sparkle" ngSrc='gifs/cluster-classic-pink.gif' width="60" height="60" alt="Pink sparkle" priority>
         }
       </div>
     </div>
@@ -28,13 +28,13 @@
       <div class="sparkle-button-wrap">
         <button class="movie-button view" (click)="haveTheseMoviesBeenWatched(false)">Watchlist</button>
         @if (movListClicked) {
-          <img class="sparkle" src='gifs/cluster-classic-aqua.gif' width="60" height="60" alt="Aqua sparkle">
+          <img class="sparkle" ngSrc='gifs/cluster-classic-aqua.gif' width="60" height="60" alt="Aqua sparkle" priority>
         }
       </div>
       <div class="sparkle-button-wrap">
         <button class="movie-button view" (click)="haveTheseMoviesBeenWatched(true)">Watched</button>
         @if (movWatchClicked) {
-          <img class="sparkle" src='gifs/cluster-classic-aqua.gif' width="60" height="60" alt="Aqua sparkle">
+          <img class="sparkle" ngSrc='gifs/cluster-classic-aqua.gif' width="60" height="60" alt="Aqua sparkle" priority>
         }
       </div>
     </div>

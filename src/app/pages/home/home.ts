@@ -6,9 +6,10 @@ import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
 import { timer } from 'rxjs';
+import { NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'app-home',
-  imports: [FormsModule],
+  imports: [FormsModule, NgOptimizedImage],
   providers: [SupabaseService],
   templateUrl: './home.html',
   styleUrl: './home.scss',

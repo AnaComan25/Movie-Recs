@@ -2,10 +2,11 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../../movie.config';
 import { SupabaseService } from '../../supabase.service';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-movie-list',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './movie-list.html',
   styleUrl: './movie-list.scss',
 })
