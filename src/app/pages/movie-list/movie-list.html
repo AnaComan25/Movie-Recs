@@ -7,7 +7,7 @@
     <div class="movie-list-container">
         <div class="title-bar-container">
             <div class="title">{{watched? 'Watched' : 'Watchlist'}}</div>
-            <div class="return-home" (click)="returnHome()">&larr; Home</div>
+            <div class="return-home" (click)="returnHome()"><span class="home-icon">&#8962;</span> Home</div>
         </div>
         @if(!watched){
             @if(nextToWatch){
@@ -34,34 +34,37 @@
         }
         <div class="scrollable-list-container">
             @for(movie of movieList; track movie){
-                <div class="list-element">
-                    <img [src]="movie.poster" onerror="this.onerror=null; this.src='https\:\/\/randomimageurl.com/api/placeholder?w=69&h=102&bg=abdbf7&fg=01476a&format=png&text=No+Img%21';" class="poster"/> 
-                    <div class="movie-details">
-                        <div class="title-year-container">
-                            <div class="movie-title">{{movie.title}}</div>
-                            <div class="movie-year">{{movie.year}}</div>
-                        </div>
-
-                        <div class="dir-genre-container">
-                            <div class="movie-director"><span class="label">Director:</span> {{movie.director}}</div>
-                            <div class="movie-genre"><span class="label">Genre:</span> {{movie.genre}}</div>
-                        </div>
-
-                        <div class="options-row">
-                            <div class="unmark-mark" (click)="updateWatchedStatus(movie.title, movie.year, movie.watched)">
-                                <div>{{movie.watched? '+ Watchlist' : '+ Watched'}}</div>
+                <div class="movie-row">
+                    <div class="list-element" appSwipeable (swiped)="deleteMovie(movie.title, movie.year)">
+                        <img [src]="movie.poster" onerror="this.onerror=null; this.src='https\:\/\/randomimageurl.com/api/placeholder?w=69&h=102&bg=abdbf7&fg=01476a&format=png&text=No+Img%21';" class="poster"/> 
+                        <div class="movie-details">
+                            <div class="title-year-container">
+                                <div class="movie-title">{{movie.title}}</div>
+                                <div class="movie-year">{{movie.year}}</div>
                             </div>
-                            @if(!movie.watched){
-                                <div class="next-up">
-                                    <div (click)="setNextUp(movie.title, movie.year, true)">Next watch<img src='gifs/arrow-up-sm-svgrepo-com.svg' width="14" height="15"></div>
+
+                            <div class="dir-genre-container">
+                                <div class="movie-director"><span class="label">Director:</span> {{movie.director}}</div>
+                                <div class="movie-genre"><span class="label">Genre:</span> {{movie.genre}}</div>
+                            </div>
+
+                            <div class="options-row">
+                                <div class="unmark-mark" (click)="updateWatchedStatus(movie.title, movie.year, movie.watched)">
+                                    <div>{{movie.watched? '+ Watchlist' : '+ Watched'}}</div>
                                 </div>
-                            }
+                                @if(!movie.watched){
+                                    <div class="next-up">
+                                        <div (click)="setNextUp(movie.title, movie.year, true)">Next watch<img src='gifs/arrow-up-sm-svgrepo-com.svg' width="14" height="15"></div>
+                                    </div>
+                                }
+                            </div>
                         </div>
+                    </div>
+                    <div class="del-text">
+                        &#8672; Swipe to Delete
                     </div>
                 </div>
             }
-            
         </div>
     </div>
-
 }

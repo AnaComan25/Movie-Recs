@@ -24,6 +24,9 @@ export class SupabaseService {
     return this.supabase.from('movies').insert(movie);
   }
 
+  deleteMovie(title: any, year: any){
+    return this.supabase.from('movies').delete().eq('title',title).eq('year',year);
+  }
   updateMovieWatchedStatus(movieTitle: any, movieYear: any, watched: boolean) {
     return this.supabase.from('movies').update({watched: watched}).eq('title', movieTitle).eq('year', movieYear);
   }

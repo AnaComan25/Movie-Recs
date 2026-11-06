@@ -48,6 +48,7 @@
   background-color: #5eb5ef;
   z-index: 10;
   flex-shrink: 0;
+  color: #012a3f;
 }
 
 .scrollable-list-container {
@@ -74,6 +75,10 @@
     cursor: pointer;
 }
 
+.home-icon {
+    font-size: 25px;
+}
+
 .next-watch-container {
     font-size: 20px;
     overflow: scroll;
@@ -93,9 +98,50 @@
     font-weight: normal;
 }
 
+.movie-row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: visible; 
+  margin-bottom: 8px;
+  border-radius: 8px;
+  
+  /* Put the red background straight on the row itself */
+//   background-color: #e53935;
+
+  /* Smoothly collapses rows upwards when deleted */
+  transition: max-height 0.3s ease-out, margin 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 200px; 
+}
+
+.del-text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 44%;
+    right: 16px;
+    font-size: 23px;
+    color: #73d1fced;
+}
+/* This special Angular state utility hides the item seamlessly as it drops from the DOM loop */
+.movie-row.ng-leave, 
+.movie-row:not(:has(.list-element)) {
+  max-height: 0 !important;
+  margin-bottom: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
 .list-element {
     display: flex;
     flex-direction: row;
+    // position: relative;
+    z-index: 2;
+    touch-action: pan-y; /* Prevents horizontal sliding from breaking page scrolling */
+    will-change: transform;
+    overflow: hidden;
     gap: 14px;
     width: 330px;
     height: fit-content;

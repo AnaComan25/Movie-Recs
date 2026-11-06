@@ -3,10 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../../movie.config';
 import { SupabaseService } from '../../supabase.service';
 import { NgOptimizedImage } from '@angular/common';
+import { SwipeableDirective } from '../../directives/swipeable-directive';
 
 @Component({
   selector: 'app-movie-list',
-  imports: [NgOptimizedImage],
+  imports: [SwipeableDirective],
   templateUrl: './movie-list.html',
   styleUrl: './movie-list.scss',
 })
@@ -19,11 +20,39 @@ export class MovieList implements OnInit {
   constructor(private router: Router, private supabaseService: SupabaseService, private cdr: ChangeDetectorRef) {
   }
 
+  isDragging = false;
+  startX = 0;
+  currentX = 0;
+  previousX = 0;
+  threshold = 50; // Minimum pixels to snap/slide
+
+  onTouchStart(event: TouchEvent): void {
+    this.isDragging = true;
+    this.startX = event.touches[0].clientX - this.previousX;
+  }
+
+  onTouchMove(event: TouchEvent): void {
+    if (!this.isDragging) return;
+    const clientX = event.touches[0].clientX;
+    this.currentX = clientX - this.startX;
+  }
+
+  onTouchEnd(): void {
+    this.isDragging = false;
+    this.previousX = this.currentX;
+
+    // Optional: snap or reset behavior if dragged past a threshold
+    if (this.currentX > 150) {
+      this.currentX = 150; // Max right limit
+    } else if (this.currentX < -150) {
+      this.currentX = -150; // Max left limit
+    }
+  }
+
   async ngOnInit(){
     this.loading = true;
     const state = history.state as {watched: boolean};
     this.watched = state.watched ?? false;
-    console.log('Watched:', this.watched);
     await this.getMovies();
     await this.getNextUp();
   }
@@ -33,11 +62,19 @@ export class MovieList implements OnInit {
     if (error) {
       console.error('Error fetching movies:', error);
     } else {
-      console.log('Fetched movies:', data);
       this.loading = false;
       this.movieList = data ?? [];
       this.movieList = this.movieList.filter(movie => movie.watched === this.watched);
     }
+  }
+
+  async deleteMovie(title: any, year: any){
+    this.movieList = this.movieList.filter((movie) => movie.title!=title && movie.year!=year);
+    await this.supabaseService.deleteMovie(title, year);
+    if(this.nextToWatch && this.nextToWatch.title == title && this.nextToWatch.year == year){
+      this.unsetNextUp();
+    }
+    this.cdr.detectChanges;
   }
 
   async getNextUp(){
@@ -74,7 +111,6 @@ export class MovieList implements OnInit {
     if (this.nextToWatch && this.nextToWatch.title === movieTitle && this.nextToWatch.year === movieYear && watched == false) {
       await this.unsetNextUp();
     }
-    console.log('Updating watched status for:', movieTitle, movieYear, 'Current watched:', watched);
     const { data, error } = await this.supabaseService.updateMovieWatchedStatus(movieTitle, movieYear, !watched);
     this.getMovies();
     this.cdr.detectChanges();
