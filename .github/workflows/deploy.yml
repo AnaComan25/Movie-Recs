@@ -30,7 +30,7 @@ jobs:
       - name: Inject Environment Variables
         run: |
           mkdir -p src/environments
-          echo "export const environment = { production: true, movieDBApiKey: '${{ secrets.MOVIE_DB_API_KEY }}', supabaseApiKey: '${{ secrets.SUPABASE_API_KEY }}', supabaseURL: '${{ secrets.SUPABASE_URL }}' };" > src/environments/environment.ts
+          echo "export const environment = { production: true, movieDBApiKey: '${{ secrets.MOVIE_DB_API_KEY }}', supabaseApiKey: '${{ secrets.SUPABASE_API_KEY }}', supabaseURL: '${{ secrets.SUPABASE_URL }}', appPass: '${{ secrets.PASS }}' };" > src/environments/environment.ts
 
       # Compiles your project into raw, optimized web files
       - name: Build Production App
