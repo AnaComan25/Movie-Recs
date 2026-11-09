@@ -1,0 +1,13 @@
+<div class="login-page">
+    <div class="title">
+       <span>&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;<b class="text j">Jacob's</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+       <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="text m">Movie</b>&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;</span>
+       <span>&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;<b class="text r">Recs!</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <div class="login-container">
+        <div class="pass">
+            <input #password name="password" type="password" placeholder="Enter password"/>
+            <button type="submit" (click)="checkPermissions(password.value)">Log in</button>
+        </div>
+    </div>
+</div>

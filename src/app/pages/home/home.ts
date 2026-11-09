@@ -5,7 +5,6 @@ import { Movie } from '../../movie.config';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
-import { timer } from 'rxjs';
 import { NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'app-home',

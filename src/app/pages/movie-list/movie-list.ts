@@ -99,7 +99,7 @@ export class MovieList implements OnInit {
   }
 
   returnHome() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
   }
 
   async unsetNextUp() {

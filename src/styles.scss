@@ -82,3 +82,77 @@ html.swal2-height-auto app-root {
   height: 100%;
   min-height: 100%;
 }
+app-login,
+app-home,
+app-movie-list {
+  view-transition-name: page;
+  height: 100%;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-old(page),
+::view-transition-new(page) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: forwards;
+}
+
+::view-transition-old(page) {
+  animation-name: slide-out-left, fade-out;
+}
+::view-transition-new(page) {
+  animation-name: slide-in-right, fade-in;
+}
+
+html.slide-reverse {
+  &::view-transition-old(page) {
+    animation-name: slide-out-right, fade-out;
+  }
+  &::view-transition-new(page) {
+    animation-name: slide-in-left, fade-in;
+  }
+}
+
+html.fade-only {
+  &::view-transition-old(page) {
+    animation-name: fade-out;
+  }
+  &::view-transition-new(page) {
+    animation-name: fade-in;
+  }
+}
+
+@keyframes slide-out-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes slide-out-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}

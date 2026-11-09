@@ -1,0 +1,90 @@
+:host {
+    height: 100%;
+}
+
+.login-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 18%;
+    gap: 14%;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    color: #d0ecf8;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.text {
+    border: 1px solid #d0ecf8;
+    border-radius: 39px;
+    padding: 11px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #f9e4ec;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.text.j {
+    color: #ce5d8f;
+}
+
+.text.m {
+    color: #ae84b4;
+}
+
+.text.r {
+    color: #92a9d7;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 61px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 70%;
+    background: linear-gradient(to bottom,#d0ecf8, #f8d0df);
+    border-radius: 44px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+input {
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 23px;
+    padding: 10px;
+    outline-color: transparent;
+    outline-style: outset;
+    outline-width: 2px;
+    color: rgb(1, 71, 106);
+    background-color: #fbedf1;
+}
+
+.pass {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color:rgb(1, 71, 106);
+    font-size: 23px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button {
+    color:rgb(1, 71, 106);
+    background-color: #fbedf1;
+    border-color: #fbedf1;
+    padding: 4px;
+    font-size: 23px;
+    width: 100%;
+}

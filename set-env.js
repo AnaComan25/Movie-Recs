@@ -10,7 +10,8 @@ const envConfigFile = `export const environment = {
   production: true,
   movieDBApiKey: '${process.env.MOVIE_DB_API_KEY}',
   supabaseApiKey: '${process.env.SUPABASE_API_KEY}',
-  supabaseURL: '${process.env.SUPABASE_URL}'
+  supabaseURL: '${process.env.SUPABASE_URL}',
+  appPass: '${process.env.PASS}
 };
 `;
 
