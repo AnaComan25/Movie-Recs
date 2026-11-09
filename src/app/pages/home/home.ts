@@ -1,19 +1,18 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SupabaseService } from '../../supabase.service';
 import { Movie } from '../../movie.config';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
-import { NgOptimizedImage } from '@angular/common';
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, NgOptimizedImage],
+  imports: [FormsModule],
   providers: [SupabaseService],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
+export class Home implements OnInit {
   movieTitle = '';
   director = '';
   year = '';
@@ -23,6 +22,11 @@ export class Home {
   movListClicked = false;
 
   constructor(private supabaseService: SupabaseService, private router: Router, private cdr: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    new Image().src = 'gifs/cluster-classic-pink.gif';
+    new Image().src = 'gifs/cluster-classic-aqua.gif';
+  }
 
   async addMovie() {
     this.clicked = true;

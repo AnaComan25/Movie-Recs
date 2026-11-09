@@ -25,15 +25,6 @@
   background-image: radial-gradient(circle, rgb(112 212 255), rgb(240, 50, 102));
 }
 
-.sparkle-preload {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-}
-
 .sparkle-button-wrap {
     position: relative;
     width: 100%;

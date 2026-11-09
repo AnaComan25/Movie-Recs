@@ -1,9 +1,4 @@
 <div class="landing-page">
-  <!-- Eager-load sparkle assets so the first button click isn't waiting on the network -->
-  <div class="sparkle-preload" aria-hidden="true">
-    <img src="gifs/cluster-classic-pink.gif" alt="" width="1" height="1" />
-    <img src="gifs/cluster-classic-aqua.gif" alt="" width="1" height="1" />
-  </div>
   <div class="title-container"><h1>Jacob's Movie Recs</h1></div>
   <div class="subtitle-container">
     <span>Just for you and I &#9825;</span>
@@ -20,7 +15,7 @@
       <div class="sparkle-button-wrap">
         <button class="movie-button" (click)="addMovie()">Add to list</button>
         @if (clicked) {
-          <img class="sparkle" ngSrc='gifs/cluster-classic-pink.gif' width="60" height="60" alt="Pink sparkle" priority>
+          <img class="sparkle" src="gifs/cluster-classic-pink.gif" width="60" height="60" alt="Pink sparkle">
         }
       </div>
     </div>
@@ -33,13 +28,13 @@
       <div class="sparkle-button-wrap">
         <button class="movie-button view" (click)="haveTheseMoviesBeenWatched(false)">Watchlist</button>
         @if (movListClicked) {
-          <img class="sparkle" ngSrc='gifs/cluster-classic-aqua.gif' width="60" height="60" alt="Aqua sparkle" priority>
+          <img class="sparkle" src="gifs/cluster-classic-aqua.gif" width="60" height="60" alt="Aqua sparkle">
         }
       </div>
       <div class="sparkle-button-wrap">
         <button class="movie-button view" (click)="haveTheseMoviesBeenWatched(true)">Watched</button>
         @if (movWatchClicked) {
-          <img class="sparkle" ngSrc='gifs/cluster-classic-aqua.gif' width="60" height="60" alt="Aqua sparkle" priority>
+          <img class="sparkle" src="gifs/cluster-classic-aqua.gif" width="60" height="60" alt="Aqua sparkle">
         }
       </div>
     </div>
